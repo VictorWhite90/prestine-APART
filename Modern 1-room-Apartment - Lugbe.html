@@ -284,7 +284,7 @@ justify-content: center;
             color: white;
             width: 30%;
             height: 30em;
-            
+            position: relative;
             padding: 20px;
             border-radius: 5px;
             margin-top: 20px;
@@ -301,7 +301,7 @@ justify-content: center;
             width: 85%;
             height: 3em;
             text-align: center;
-            margin-top: 11em;
+            margin-top: 6em;
 
            
         }
@@ -877,15 +877,29 @@ justify-content: center;
   }
   .features-mobile {
            background-color: #007BFF;
+           position: relative;
+           position: relative;
             color: white;
             width: 90%;
-            height: 25em;
+            height: 27em;
             margin: auto;
             padding: 20px;
             border-radius: 5px;
             margin-top: 20px;
             animation: animated-shadow 3.5s infinite ease-in-out; /* Add continuous animation */
         }
+        .discountz-badge {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #ffffff;
+  color: white;
+  padding: 10px 15px;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
         .features-mobile ul{
             font-size: 13px;
         }
@@ -896,8 +910,8 @@ justify-content: center;
             width: 85%;
             height: 3em;
             text-align: center;
-            margin-top: 2.4em;
             font-size: 19px;
+            margin-top: 1.5em;
             animation: animated-shadow 3.5s infinite ease-in-out; /* Add continuous animation */
         }
         
@@ -965,6 +979,22 @@ justify-content: center;
 }
 
 
+.pricz{
+  margin-top: -1em;
+  text-decoration: line-through;
+}
+.discount-badge {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
 
 
@@ -1162,6 +1192,7 @@ justify-content: center;
     
     
                 <div class="features text-start" style="box-shadow: 0 4px 6px rgb(1, 7, 55); font-family: 'Times New Roman', Times, serif;">
+                  <div class="discount-badge">30% OFF</div>
                     <h4  class="">Features</h4>
                     <ul>
                         <li>Spacious Open-Plan Living Area</li>
@@ -1173,6 +1204,8 @@ justify-content: center;
 
 
                     <p class="text-center desktop-price  " style="margin-top: em; font-size: 2.2em;">₦30,000 per night</p>
+                    <p class="pricz text-center">₦43,000 per night</p>
+                    <p class="text-center">Offer last till 5th Marth</p>
                     <p style="font-size: 16px; text-align: center;">Excluding taxes</p>
       
                     
@@ -1327,6 +1360,7 @@ justify-content: center;
     </section>
 
     <div class="features-mobile text-start" style="box-shadow: 0 4px 6px rgb(1, 7, 55); font-family: 'Times New Roman', Times, serif;">
+      <div class="discountz-badge">30% OFF</div>
       <h4  class="">Features</h4>
       <ul>
         <li>Spacious Open-Plan Living Area</li>
@@ -1338,6 +1372,8 @@ justify-content: center;
 
 
        <p class="text-center desktop-price  " style="margin-top: em; font-size: 1.7em;">₦30,000 per night</p>
+       <p class="pricz text-center">₦43,000 per night</p>
+       <p class="text-center">Offer last till 5th Marth</p>
        <p style="font-size: 19px; text-align: center;">Excluding taxes</p>
       
       
@@ -1364,7 +1400,7 @@ justify-content: center;
           <div class="col-lg-4 col-md-6">
             <div class="card property-card" >
                 <a href="">
-                    <img src="images/AP2-845x563.jpg.webp" class="card-img-top" alt="Beach Resort Estate">
+                  <img src="images/1 room studio (1).jpg" class="card-img-top" alt="Beach Resort Estate">
                     <div class="card-body">
                       <h5 class="card-title">Classic  Studio Apartment-Apo</h5>
                       <p class="card-text">
@@ -1394,7 +1430,7 @@ justify-content: center;
           <div class="col-lg-4 col-md-6">
             <div class="card property-card" >
                 <a href="">
-                    <img src="images/AP2-845x563.jpg.webp" class="card-img-top" alt="Beach Resort Estate">
+                  <img src="images/apo rm2.jpg" class="card-img-top" alt="Beach Resort Estate">
                     <div class="card-body">
                       <h5 class="card-title">Executive 2-Room Apartment - Apo</h5>
                       <p class="card-text">
@@ -1424,7 +1460,7 @@ justify-content: center;
           <div class="col-lg-4 col-md-6">
             <div class="card property-card" >
                 <a href="">
-                    <img src="images/AP2-845x563.jpg.webp" class="card-img-top" alt="Beach Resort Estate">
+                  <img src="images/1 bed lugbe b (1).jpg" class="card-img-top" alt="Beach Resort Estate">
                     <div class="card-body">
                       <h5 class="card-title">Prestige Suite - 2-Bedroom Apartment with Boys’ Quarter- Lugbe</h5>
                       <p class="card-text">
@@ -1714,7 +1750,7 @@ navItems.forEach((item) => {
 
     const checkinDate = document.getElementById('checkin').value;
     const checkoutDate = document.getElementById('checkout').value;
-    const roomRate = 45000; // Static room rate
+    const roomRate = 30000; // Static room rate
     const guestNumber = document.getElementById('guests').value;
 
     // Calculate total nights
