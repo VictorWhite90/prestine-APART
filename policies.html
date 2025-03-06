@@ -900,7 +900,7 @@ color: rgb(27, 61, 250);
   color: #333;
   height: 67rem; /* Let the height adjust automatically for content */
   padding: 20px 0;
-  margin-top: 7rem;
+ 
 }
 
 .footer .container {
@@ -982,7 +982,7 @@ color: rgb(27, 61, 250);
     flex: 1 1 100%; /* Make each column take up the full width on smaller screens */
   }
   .footer{
-    margin-top: 7rem;
+  
   }
   
 
@@ -1415,7 +1415,55 @@ justify-content: center;
   text-decoration: line-through;
 }
 
+
+.containerxx {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+       .containerxx h1 {
+            text-align: center;
+            color: #444;
+        }
+        .accpt {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .btn-accpt {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .agree-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        .cancel-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            .containerxx {
+                width: 100%;
+                padding: 15px;
+            }
+        }
     </style>
+
+ 
+ 
 
 </head>
 <body>
@@ -1505,309 +1553,49 @@ justify-content: center;
     
 
 
-    <div class="container-fluid sliderimages p-0">
-        <!-- Background Container -->
-        <div class="background-container">
-          <div class="background-image" style="background-image: url('images/plesant\ street.jpg');"></div>
-          <div class="background-image active" style="background-image: url('images/Apo-3.jpeg');"></div>
-          <div class="background-image" style="background-image: url('images/plesant2.jpg');"></div>
-          <div class="background-image" style="background-image: url('images/Apo-1.jpeg');"></div>
-          <div class="background-image" style="background-image: url('images/plesant8.jpg');"></div>
-          <div class="background-image" style="background-image: url('images/IMG_4935.jpg');"></div>
-          <div class="background-image" style="background-image: url('images/DSC_2654.jpg');"></div>
-          <div class="background-image" style="background-image: url('images/I-scaled.jpg');"></div>
-          <div class="background-image" style="background-image: url('images/plesant\ street2.jpg');"></div>
-
+   
+    <div class="containerxx">
+        <h1>Booking Policies</h1>
+        <p>Welcome to Pristine Apartments. To ensure a comfortable and secure stay for all our guests, please take a moment to read through our policies before proceeding with your booking.</p>
+        <ul>
+            <li>1. Check-out time is 12 noon prompt. Extension will attract the appropriate night rate.</li>
+            <li>2. Booking is confirmed only when payment has been received by the Management and a Booking Confirmation Advice is sent.</li>
+            <li>3. Refund of payment is made only if booking is cancelled within 48 hours to check-in date.</li>
+            <li>4. A valid means of identification is required to be presented on arrival for checking in.</li>
+            <li>5. The apartment is provided with cooking and laundry appliances. Any other special requests concerning laundry and cooking should be made in advance.</li>
+            <li>6. Smoking is not allowed in the public spaces but could be permitted only in the balcony of the apartment.</li>
+            <li>7. The occupant will not do anything that will create inconvenience to other apartment users.</li>
+            <li>8. The occupant will not use the apartment for any illicit or illegal activities or any activity of a criminal nature.</li>
+            <li>9. The Management of the apartment facility is under obligation to report any activity of a suspicious criminal nature to the security agencies.</li>
+            <li>10. The facilities and appliances provided in the apartment are for use solely within the apartment.</li>
+            <li>11. The facilities and appliances in the apartment are for the convenience and comfort of the occupant and are to be used responsibly and without damages to avoid a surcharge.</li>
+        </ul>
+        <div class="accpt data-apartment="Modern 1-room-Apartment-Lugbe" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: white;">By proceeding with the booking, you accept the above policies.</div>
+        <div class="btn-accpt">
+            <button class="btn agree-btn">Agree & Proceed</button>
+            <button class="btn cancel-btn">Cancel Booking</button>
         </div>
-    
-        <!-- Overlay Content -->
-        <div class="overlay-content d-flex justify-content-center align-items-center">
-  
-        </div>
-      </div>
-
-
+    </div>
 
 
       
-      <section class="container mt-5 d-none d-md-block">
-        <div class="booking-bar d-flex g-5 justify-content-between align-items-center sticky-navs">
-          <input type="date" class="form-control w-25" placeholder="Check In">
-          <input type="date" class="form-control w-25" placeholder="Check Out">
-          <select class="form-select w-25">
-            <option>Adults</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-          <button class="btn btn-primary w-25">
-            <a href="Apartment.html" class="room-btn text-light" style="text-decoration: none;">Check Rooms</a>
-          </button>
-        </div>
-      </section>
+  
 
 
 
 
-    <section class="rooms m-auto">
-      <h1 class="section-title">Apartments</h1>
-      <div class="room-cards">
-        <!-- Deluxe Room -->
-         
-        <div class="room-card">
-          <img src="images/apo rm 12.jpg" alt="Penthouse I">
-          <!-- <div class="discount-badge">30% OFF</div> -->
-          <div class="overlay"></div> <!-- Transparent Blue Overlay -->
-          <div class="room-details">
-            <div class="room-details-first d-flex justify-content-between">
-  
-              
-              <div class="room-details-first-details" style="font-size: small;">
-                <h2>Elegant 1- room Apartment - Apo</h2>
-              <p>Room size:48 m²</p>
-              </div>
     
-              <div class="room-icons">
-                <span class="icon"><i class="fas fa-users"></i></span>
-                <span class="icon"><i class="fas fa-bathtub"></i></span>
-                <span class="icon"><i class="fas fa-bed"></i></span>
-              </div>
-              
-            </div>
-         
-    
-            <div class="room-details-second d-flex justify-content-between">
-              <div class="room-details-price">
-                <p class="price">₦75,000 per night</p>
-                <!-- <p class="pricz">₦64,000 per night</p> -->
-                <p style="font-size: 16px;">Excluding charges</p>
-              </div>
-              
-              <div class="room-details-btn ">
-                <button class="btn bg-primary"><a href="Elegant-apartment.html">Check Now</a></button>
-              </div>
-              
-            </div>
-           
-          </div>
-        </div>
-  
-  
-  
-  
-        <!-- Standard Room -->
-        <div class="room-card">
-          <img src="images/AJ_4533-93.jpg" alt="Penthouse I">
-          <!-- <div class="discount-badge">30% OFF</div> -->
-          <div class="overlay"></div> 
-          <div class="room-details">
-            <div class="room-details-first d-flex justify-content-between">
-  
-              
-              <div class="room-details-first-details" style="font-size: small;">
-                <h2>Modern 1-room Apartment - Lugbe
-                </h2>
-              <p>Room size: 48 m²</p>
-              </div>
-    
-              <div class="room-icons">
-                <span class="icon"><i class="fas fa-users"></i></span>
-                <span class="icon"><i class="fas fa-bathtub"></i></span>
-                <span class="icon"><i class="fas fa-bed"></i></span>
-              </div>
-              
-            </div>
-         
-    
-            <div class="room-details-second d-flex justify-content-between">
-              <div class="room-details-price">
-                <p class="price">₦45,000 per night</p>
-                <!-- <p class="pricz">₦43,000 per night</p> -->
-                <p style="font-size: 16px;">Excluding charges</p>
-              </div>
-              
-              <div class="room-details-btn">
-                <button class="btn bg-primary"><a href="Modern 1-room-Apartment - Lugbe.html">Check Now</a></button>
-              </div>
-              
-            </div>
-           
-          </div>
-        </div>
-  
-  
-  
-  
-        <!-- Penthouse -->
-        <div class="room-card">
-          <img src="images/Apo rm4.jpg" alt="Penthouse II">
-          <!-- <div class="discount-badge">30% OFF</div> -->
-          <div class="overlay"></div> <!-- Transparent Blue Overlay -->
-          <div class="room-details">
-            <div class="room-details-first d-flex justify-content-between">
-  
-              
-              <div class="room-details-first-details" style="font-size: small;">
-                <h2>Executive 2-Room Apartment - Apo</h2>
-              <p>Room size: 48 m²</p>
-              </div>
-    
-              <div class="room-icons">
-                <span class="icon"><i class="fas fa-users"></i></span>
-                <span class="icon"><i class="fas fa-bathtub"></i></span>
-                <span class="icon"><i class="fas fa-bed"></i></span>
-              </div>
-              
-            </div>
-         
-    
-            <div class="room-details-second d-flex justify-content-between">
-              <div class="room-details-price">
-                <p class="price">₦95,000 per night</p>
-                <!-- <p class="pricz">₦86,000 per night</p> -->
-                <p style="font-size: 16px;">Excluding charges</p>
-              </div>
-              
-              <div class="room-details-btn">
-                <button class="btn bg-primary"><a href="Executive 2-Room Apartment .html">Check Now</a></button>
-              </div>
-              
-            </div>
-           
-          </div>
-        </div>
-  
-  
-      </div>
-    </section>
-
-       <!-- WhatsApp Icon -->
-   <a href="https://wa.me/+2348029823593" class="whatsapp-link" target="_blank">
-    <img src="images/whatssap.png" alt="WhatsApp">
-  </a>
-    
-  <h1 class="perfect text-center mt-lg-5 mt-md-2 mt-3">The Perfect Stay, Guaranteed</h1>
 
 
-    
    
 
-  <div class="HOTEL-services d-flex flex-wrap justify-content-between align-items-center m-auto p-3 p-md-5"style="background-color: rgba(112, 227, 245, 0.12); width: 95%;">
-  <!-- Text Section -->
-  <div class="HOTEL-services-text text-start mt- p-3">
-   <!-- Header -->
-   <div class="HOTEL-services-header">
-     <h3>House Features</h3>
-   </div>
-  
-   <!-- Features List -->
-   <div class=" d-flex flex-wrap mt-3">
-     <div class="Hotel-Features-parag-first me-4">
-       <ul>
-         
-         <li>Free parking space</li>
-         <li>Group Bookings</li>
-       </ul>
-     </div>
-     <div class="Hotel-Features-parag-second">
-       <ul>
-        
-         <li>In-Room Dining</li>
-         <li>Group Reservations</li>
-       </ul>
-     </div>
-   </div>
-  
-   <!-- Additional Services -->
-   
-  </div>
-  
-  <!-- Image Section -->
-  <div class="HOTEL-services-image flex-grow-1">
-   <img src="images/plesant8.jpg" alt="Reception" class="img-fluid">
-  </div>
-  </div>
-
-
-
- <section class="hero" style="margin-top: 8em;">
-    <div class="hero-overlay">
-    </div>
-  </section> 
-
 
   
-  <section class="aboutx">
-    <div class="aboutx-container">
-      <div class="aboutx-content">
-        <h4>More About Us</h4>
-        <p>
-          Welcome to Prestine Apartments, where comfort meets convenience in the heart of Apo. Located just minutes away from the bustling Shoprite Apo, our apartments offer the perfect blend of modern living and easy access to the city’s top attractions.
-          
-          <p>From cozy studio apartments to spacious three-bedroom units, each space is thoughtfully designed with high-quality finishes, contemporary amenities, and a focus on functionality.
-          Our prime location ensures that you’re always connected to the best the city has to offer. </p>
-          <p>Experience modern living redefined at Prestine Apartments. Welcome home!</p>
-        </p>
-        <button class="aboutx-btn "><a href="Apartment.html">Book an Apartment now</a></button>
-      </div>
-
-      <div class="about-image">
-        <img id="aboutImage" src="images/Apo-1.jpeg" alt="Building">
-        <div class="play-button" id="playButton">
-          <span>&#9658;</span>
-        </div>
-        <video id="aboutVideo" muted loop autoplay style="display: none; object-fit: cover;">
-          <source src="videos/WhatsApp Video 2024-12-10 at 09.29.56_8bbb8fa9.mp4" type="video/mp4">
-        </video>
-      </div>
-      
-    </div>
-  </section>
 
 
 
 
 
-  <section>
-
-    <div class="container customers-review" style="margin-top: 2rem; height: 460px;  box-shadow: 0 4px 6px rgb(12, 46, 179);">
-        <h1 class=" customers-header text-center mb-4">Customers Review</h1>
-        <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner m-auto">
-                <div class="carousel-item active">
-                    <p class="review-text">"Amazing staff, superb food, outstanding services, and I felt at home. I could have stayed longer. I like the great services I got from the staff. I loved everything and felt at home. Food was superb as I did not expect such a great meal from a hotel. So, I will absolutely come back again."</p>
-                    <p class="review-author">- Jane Pattrick</p>
-                </div>
-                <div class="carousel-item">
-                    <p class="review-text">"The location is fantastic; it's in the middle of everywhere. It's easily accessible and easy to describe to guests visiting. The complimentary breakfast is also a nice concept in addition to the self-serviced kitchen in the apartment."</p>
-                    <p class="review-author">- Fred John</p>
-                </div>
-                <div class="carousel-item">
-                    <p class="review-text">"Exceptional hospitality! The rooms were clean, spacious, and equipped with everything we needed. The staff were so friendly and made sure all our needs were met. Definitely coming back!"</p>
-                    <p class="review-author">- Alex Miracle</p>
-                </div>
-                <div class="carousel-item">
-                    <p class="review-text">"Loved the vibe and atmosphere! The decor was modern, and the services were beyond my expectations. A perfect getaway destination. Highly recommended!"</p>
-                    <p class="review-author">- Daniel Princewill</p>
-                </div>
-                <div class="carousel-item">
-                    <p class="review-text">"Conveniently located, comfortable rooms, and outstanding customer care. The entire experience felt personalized and memorable. Kudos to the team!"</p>
-                    <p class="review-author">- Fortune Godsgift </p>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-    
-
-</section>
 
 
   
@@ -1821,10 +1609,6 @@ justify-content: center;
 
 
 
-    <div class="mobileMap">
-      <h3>Locate Us on Map</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.8384986523947!2d7.4910934000000005!3d8.987004599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0d2a678a79e3%3A0x1124c0d588f26144!2sPleasant%20Places%2CApo!5e0!3m2!1sen!2sng!4v1735572037165!5m2!1sen!2sng" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
      
 
       <!-- footer -->

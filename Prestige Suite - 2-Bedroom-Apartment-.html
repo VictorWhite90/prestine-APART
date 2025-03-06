@@ -315,7 +315,7 @@ justify-content: center;
             width: 85%;
             height: 3em;
             text-align: center;
-            margin-top: 6em;
+            margin-top: 9em;
 
            
         }
@@ -909,7 +909,7 @@ justify-content: center;
             width: 85%;
             height: 3em;
             text-align: center;
-            margin-top: 1.7em;
+            margin-top: 3.7em;
             font-size: 19px;
             animation: animated-shadow 3.5s infinite ease-in-out; /* Add continuous animation */
 
@@ -981,11 +981,11 @@ justify-content: center;
 }
 
 
-.pricz{
+/* .pricz{
   margin-top: -1em;
   text-decoration: line-through;
-}
-.discount-badge {
+} */
+/* .discount-badge {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -996,7 +996,7 @@ justify-content: center;
   font-size: 14px;
   font-weight: bold;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+} */
 
 
 
@@ -1196,7 +1196,7 @@ justify-content: center;
 
 
             <div class="features text-start" style="box-shadow: 0 4px 6px rgb(1, 7, 55); font-family: 'Times New Roman', Times, serif;">
-              <div class="discount-badge">30% OFF</div>
+              <!-- <div class="discount-badge">30% OFF</div> -->
                 <h4  class="">Features</h4>
                 <ul>
                     <li>Spacious Open-Plan Living Area</li>
@@ -1207,10 +1207,10 @@ justify-content: center;
                 </ul>
 
 
-                <p class="text-center desktop-price  " style="margin-top: em; font-size: 2.2em;">₦60,000 per night</p>
-                <p class="pricz text-center">₦86,000 per night</p>
+                <p class="text-center desktop-price  " style="margin-top: em; font-size: 2.2em;">₦78,000 per night</p>
+                <!-- <p class="pricz text-center">₦86,000 per night</p> -->
                 <p style="font-size: 16px; text-align: center;">Excluding charges</p>
-                <p class="text-center" style="font-size: 16px;">Offer last till 5th Marth</p>
+                <!-- <p class="text-center" style="font-size: 16px;">Offer last till 5th Marth</p> -->
     
                 
                 <div class="centered-div">
@@ -1248,7 +1248,8 @@ justify-content: center;
                       <div class="row">
                         <div class="col-auto">
                           <label for="name" class="form-label">Title</label>
-                          <select class="form-select mb-2" id="title" name="user_tltle" required>
+                          <select class="form-select mb-2" id="title" name="user_title" required>
+
                             <option value="" disabled selected>Select Title</option>
                             <option value="Mr">Mr</option>
                             <option value="Mrs">Mrs</option>
@@ -1257,11 +1258,16 @@ justify-content: center;
                             <option value="Other">Other</option>
                           </select>
                         </div>
-                        
+
                         <div class="col">
-                           <label for="name" class="form-label">Full Name</label>
-                          <input type="text" class="form-control" id="name" name="user_name" placeholder="Enter your full name" required>
-                        </div>
+                          <label for="first_name" class="form-label">First Name</label>
+                          <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" required>
+                      </div>
+                      <div class="col">
+                          <label for="last_name" class="form-label">Last Name</label>
+                          <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" required>
+                      </div>
+                      
                       </div>
                     </div>
                     <div class="mb-3">
@@ -1291,6 +1297,9 @@ justify-content: center;
                     <input type="hidden" id="hiddenServiceCharge" name="service_charge">
                     <input type="hidden" id="hiddenGrandTotal" name="grand_total">
                     <input type="hidden" name="apartment_name" id="apartmentName">
+                    <input type="hidden" id="hiddensubtotal" name="subtotal">
+                    <input type="hidden" id="hiddenTotalNights" name="total_nights">
+                    
                     <p>Total Price (Excluding VAT): <span id="priceDisplay">₦0.00</span></p>
         
 
@@ -1371,7 +1380,7 @@ justify-content: center;
     </section>
 
     <div class="features-mobile text-start" style="box-shadow: 0 4px 6px rgb(1, 7, 55); font-family: 'Times New Roman', Times, serif;">
-      <div class="discountz-badge">30% OFF</div>
+      <!-- <div class="discountz-badge">30% OFF</div> -->
       <h4  class="">Features</h4>
       <ul>
         <li>Spacious Open-Plan Living Area</li>
@@ -1383,10 +1392,10 @@ justify-content: center;
 
 
      
-      <p class="text-center " style="margin-top: em; font-size: 2em;">₦60,000 per night</p>
-      <p class="pricz text-center">₦86,000 per night</p>
+      <p class="text-center " style="margin-top: em; font-size: 2em;">₦78,000 per night</p>
+      <!-- <p class="pricz text-center">₦86,000 per night</p> -->
       <p style="font-size: 16px; text-align: center;">Excluding charges</p>
-      <p class="text-center" style="font-size: 16px;">Offer last till 5th Marth</p>
+      <!-- <p class="text-center" style="font-size: 16px;">Offer last till 5th Marth</p> -->
     
     
       
@@ -1420,7 +1429,7 @@ justify-content: center;
                       </h5>
                       <p></p>
                       <p class="card-text">
-                        <span class="new-price">₦45,000 per night</span>
+                        <span class="new-price">₦60,000 per night</span>
                       </p>
                       <p class="property-info">Standard Bedroom and Bathrooms</p>
 
@@ -1450,7 +1459,7 @@ justify-content: center;
                       <h5 class="card-title">Deluxe royale 3 Bedroom  Apartment - Apo</h5>
                       <p class="card-text">
                        
-                        <span class="new-price"> ⁠₦75,000 per night</span>
+                        <span class="new-price"> ⁠₦125,000 per night</span>
                       </p>
                       <p class="property-info">Standard Bedroom and Bathrooms</p>
 
@@ -1480,7 +1489,7 @@ justify-content: center;
                       <h5 class="card-title">Executive 2-Room Apartment - Apo</h5>
                       <p class="card-text">
                         
-                        <span class="new-price">₦60,000 per night</span>
+                        <span class="new-price">₦95,000 per night</span>
                       </p>
                       <p class="property-info">Standard Bedroom and Bathrooms</p>
 
@@ -1658,7 +1667,7 @@ justify-content: center;
     
 
    <button type="button" class="btn-book book-now-btn" id="read-more-btn" data-bs-toggle="modal" data-apartment="Prestige-Suite-2-Bedroom-Apartment" data-bs-target="#reservationModal" style="color: white;">Book Now
-    <p style="font-size: 15px;">₦60,000 per night</p>
+    <p style="font-size: 15px;">₦78,000 per night</p>
    </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1703,7 +1712,7 @@ navItems.forEach((item) => {
     navLinks.classList.remove("show");
   });
 });
-
+ 
 </script>
 
 
@@ -1714,126 +1723,239 @@ navItems.forEach((item) => {
   console.log(emailjs);
 </script>
 
-<script>
+<!-- <script>
   // Initialize EmailJS
-  emailjs.init('2ZNOdi6QPItTHItBO');
+emailjs.init('2ZNOdi6QPItTHItBO');
 
-  // Function to calculate and update the price dynamically
-  function updatePrice() {
+// Function to format numbers with commas (e.g., 100000 -> 100,000.00)
+function formatNumberWithCommas(amount) {
+    return amount.toLocaleString(undefined, { minimumFractionDigits: 2 });
+}
+
+function updatePrice() {
     const checkinDate = document.getElementById('checkin').value;
     const checkoutDate = document.getElementById('checkout').value;
-    const roomRate = 60000; // Static room rate
+    const roomRate = parseFloat(document.getElementById('hiddenRoomRate').value) || 78000;
 
     if (!checkinDate || !checkoutDate) {
-      document.getElementById('priceDisplay').textContent = "₦0.00";
-      return;
+        document.getElementById('priceDisplay').textContent = "₦0.00";
+        document.getElementById('hiddensubtotal').value = "";
+        document.getElementById('hiddenTotalNights').value = "";
+        return;
     }
 
-    // Calculate total nights
-    const checkin = new Date(checkinDate);
-    const checkout = new Date(checkoutDate);
-    const totalNights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24)); // Days difference
-
-    if (isNaN(totalNights) || totalNights <= 0) {
-      document.getElementById('priceDisplay').textContent = "₦0.00";
-      return;
-    }
-
-    // Calculate room total
-    const roomTotal = totalNights * roomRate;
-
-    // Update the displayed room total price
-    document.getElementById('priceDisplay').textContent = `₦${roomTotal.toLocaleString()}`;
-  }
-
-  // Add event listeners to dynamically calculate and display the room price
-  document.getElementById('checkin').addEventListener('change', updatePrice);
-  document.getElementById('checkout').addEventListener('change', updatePrice);
-
-  // Add event listener to "Book Now" buttons
-  document.querySelectorAll('.book-now-btn').forEach(button => {
-    button.addEventListener('click', function () {
-      const apartmentName = this.getAttribute('data-apartment');
-      document.getElementById('apartmentName').value = apartmentName; // Set hidden input value
-    });
-  });
-
-  // Form submission event
-  document.getElementById('reservationForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const checkinDate = document.getElementById('checkin').value;
-    const checkoutDate = document.getElementById('checkout').value;
-    const roomRate = 60000; // Static room rate
-    const guestNumber = document.getElementById('guests').value;
-
-    // Calculate total nights
     const checkin = new Date(checkinDate);
     const checkout = new Date(checkoutDate);
     const totalNights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
 
     if (isNaN(totalNights) || totalNights <= 0) {
-      alert('Invalid check-in or check-out dates. Check-out must be after check-in.');
-      return;
+        document.getElementById('priceDisplay').textContent = "₦0.00";
+        document.getElementById('hiddenTotalNights').value = "";
+        document.getElementById('hiddensubtotal').value = "";
+        return;
     }
 
-    // Calculate costs
-    const roomTotal = totalNights * roomRate;
-    const vatAmount = roomTotal * 0.075; // 7.5% VAT
-    const serviceCharge = roomTotal * 0.1; // 10% Service Charge
-    const grandTotal = roomTotal + vatAmount + serviceCharge;
+    const subtotal = totalNights * roomRate;
 
-    // Bind calculated values to hidden inputs
-    document.getElementById('hiddenRoomRate').value = roomTotal.toFixed(2); // Room total
-    document.getElementById('hiddenVAT').value = vatAmount.toFixed(2); // VAT
-    document.getElementById('hiddenServiceCharge').value = serviceCharge.toFixed(2); // Service charge
-    document.getElementById('hiddenGrandTotal').value = grandTotal.toFixed(2); // Grand total
+    document.getElementById('priceDisplay').textContent = `₦${formatNumberWithCommas(subtotal)}`;
+    document.getElementById('hiddenTotalNights').value = totalNights;
+    document.getElementById('hiddensubtotal').value = subtotal.toFixed(2);
+}
 
-    // Bind priceDisplay to hidden field
-    const priceDisplayText = document.getElementById('priceDisplay').textContent;
-    const priceDisplayValue = parseFloat(priceDisplayText.replace(/[₦,]/g, '')); // Convert to number
+// Event listeners for date inputs
+document.getElementById('checkin').addEventListener('change', updatePrice);
+document.getElementById('checkout').addEventListener('change', updatePrice);
 
-    if (isNaN(priceDisplayValue)) {
-      alert("Error retrieving the displayed price.");
-      return;
+// Handle "Book Now" button click to set apartment details and room rate
+document.querySelectorAll('.book-now-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const apartmentName = this.getAttribute('data-apartment');
+        const roomRate = parseFloat(this.getAttribute('data-price')) || 78000;
+
+        document.getElementById('apartmentName').value = apartmentName;
+        document.getElementById('hiddenRoomRate').value = roomRate;
+    });
+});
+
+// Handle form submission
+document.getElementById('reservationForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const checkinDate = document.getElementById('checkin').value;
+    const checkoutDate = document.getElementById('checkout').value;
+    const guestNumber = document.getElementById('guests').value;
+    const roomRate = parseFloat(document.getElementById('hiddenRoomRate').value) || 78000;
+    const totalNights = parseInt(document.getElementById('hiddenTotalNights').value) || 1;
+
+    if (!checkinDate || !checkoutDate || totalNights <= 0) {
+        alert('Invalid check-in or check-out dates.');
+        return;
     }
-    document.getElementById('hiddenRoomRate').value = priceDisplayValue.toFixed(2);
 
-    // Prepare templateParams for EmailJS
+    // Extract surname (last word in the name)
+    const fullName = document.getElementById("name").value.trim();
+    const nameParts = fullName.split(" ");
+    const surname = nameParts.length > 1 ? nameParts[nameParts.length - 1] : fullName;
+
+    // Extract the displayed subtotal from priceDisplay (remove ₦ sign and commas)
+    const displayedSubtotal = document.getElementById('priceDisplay').textContent.replace(/₦|,/g, '').trim();
+    const subtotal = parseFloat(displayedSubtotal) || 0;
+
+    // Calculate VAT, service charge, and grand total
+    const vatAmount = subtotal * 0.075;
+    const serviceCharge = subtotal * 0.1;
+    const grandTotal = subtotal + vatAmount + serviceCharge;
+
+    // Update hidden input fields before sending
+    document.getElementById('hiddensubtotal').value = formatNumberWithCommas(subtotal);
+    document.getElementById('hiddenVAT').value = formatNumberWithCommas(vatAmount);
+    document.getElementById('hiddenServiceCharge').value = formatNumberWithCommas(serviceCharge);
+    document.getElementById('hiddenGrandTotal').value = formatNumberWithCommas(grandTotal);
+
+    console.log("Updated Subtotal Before Sending:", formatNumberWithCommas(subtotal));
+
+    // Prepare data for EmailJS
     const templateParams = {
-      user_name: document.getElementById("name").value,
-      user_email: document.getElementById("email").value,
-      user_phone: document.getElementById("phone").value,
-      checkin_date: checkinDate,
-      checkout_date: checkoutDate,
-      guest_number: guestNumber,
-      apartment_name: document.getElementById("apartmentName").value,
-      price_display: priceDisplayValue.toFixed(2),
-      vat_amount: vatAmount.toFixed(2),
-      service_charge: serviceCharge.toFixed(2),
-      grand_total: grandTotal.toFixed(2),
-      total_nights: totalNights.toFixed(2), // Use lowercase
-      total_stay: totalNights.toFixed(2),
-
-
+        surname: surname, // Send only the surname
+        user_name: fullName,
+        user_email: document.getElementById("email").value,
+        user_phone: document.getElementById("phone").value,
+        checkin_date: checkinDate,
+        checkout_date: checkoutDate,
+        guest_number: guestNumber,
+        apartment_name: document.getElementById("apartmentName").value,
+        subtotal: `₦${formatNumberWithCommas(subtotal)}`,
+        vat_amount: `₦${formatNumberWithCommas(vatAmount)}`,
+        service_charge: `₦${formatNumberWithCommas(serviceCharge)}`,
+        grand_total: `₦${formatNumberWithCommas(grandTotal)}`,
+        total_nights: totalNights.toFixed(2)
     };
-    console.log("Price Display:", priceDisplayValue);
-    console.log("Template Params:", templateParams);
 
-    console.log(templateParams); // Debugging
+    console.log("Final Template Params:", templateParams);
 
-    // Send email with EmailJS
+    // Send the form using EmailJS
     emailjs.sendForm('service_p6y1fke', 'template_vvm744y', this)
-      .then(function (response) {
-        console.log('SUCCESS!', response.status, response.text);
+        .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+            window.location.href = 'confirmation.html';
+        }, function (error) {
+            console.log('FAILED...', error);
+            alert('Failed to send booking request. Please try again.');
+        });
+});
 
-        // Redirect to confirmation page
-        window.location.href = 'confirmation.html';
-      }, function (error) {
-        console.log('FAILED...', error);
-        alert('Failed to send booking request. Please try again.');
-      });
-  });
+</script> -->
+
+<script>
+  // Initialize EmailJS
+emailjs.init('2ZNOdi6QPItTHItBO');
+
+// Function to format numbers with commas
+function formatNumberWithCommas(amount) {
+    return amount.toLocaleString(undefined, { minimumFractionDigits: 2 });
+}
+
+// Function to update price based on check-in and check-out dates
+function updatePrice() {
+    const checkinDate = document.getElementById('checkin').value;
+    const checkoutDate = document.getElementById('checkout').value;
+    const roomRate = parseFloat(document.getElementById('hiddenRoomRate').value) || 78000;
+
+    if (!checkinDate || !checkoutDate) {
+        document.getElementById('priceDisplay').textContent = "₦0.00";
+        return;
+    }
+
+    const checkin = new Date(checkinDate);
+    const checkout = new Date(checkoutDate);
+    const totalNights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
+
+    if (isNaN(totalNights) || totalNights <= 0) {
+        document.getElementById('priceDisplay').textContent = "₦0.00";
+        return;
+    }
+
+    const subtotal = totalNights * roomRate;
+    document.getElementById('priceDisplay').textContent = `₦${formatNumberWithCommas(subtotal)}`;
+}
+
+// Event listeners for date inputs
+document.getElementById('checkin').addEventListener('change', updatePrice);
+document.getElementById('checkout').addEventListener('change', updatePrice);
+
+// Handle "Book Now" button click
+document.querySelectorAll('.book-now-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        document.getElementById('apartmentName').value = this.getAttribute('data-apartment');
+        document.getElementById('hiddenRoomRate').value = this.getAttribute('data-price') || 78000;
+    });
+});
+
+// Handle form submission
+document.getElementById('reservationForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const checkinDate = document.getElementById('checkin').value;
+    const checkoutDate = document.getElementById('checkout').value;
+    const guestNumber = document.getElementById('guests').value;
+    const totalNights = Math.max(1, parseInt((new Date(checkoutDate) - new Date(checkinDate)) / (1000 * 60 * 60 * 24)));
+
+    if (!checkinDate || !checkoutDate || totalNights <= 0) {
+        alert('Invalid check-in or check-out dates.');
+        return;
+    }
+
+    // Extract form values
+    const title = document.getElementById("title").value;  // Fix: Now extracting the title
+    const firstName = document.getElementById("first_name").value.trim();
+    const lastName = document.getElementById("last_name").value.trim();
+    const userEmail = document.getElementById("email").value;
+    const userPhone = document.getElementById("phone").value;
+    const apartmentName = document.getElementById("apartmentName").value;
+
+    // Calculate pricing
+    const displayedSubtotal = document.getElementById('priceDisplay').textContent.replace(/₦|,/g, '').trim();
+    const subtotal = parseFloat(displayedSubtotal) || 0;
+    const vatAmount = subtotal * 0.075;
+    const serviceCharge = subtotal * 0.1;
+    const grandTotal = subtotal + vatAmount + serviceCharge;
+
+    // ✅ Update hidden form fields before sending (formatted with commas)
+    document.getElementById('hiddensubtotal').value = formatNumberWithCommas(subtotal);
+    document.getElementById('hiddenVAT').value = formatNumberWithCommas(vatAmount);
+    document.getElementById('hiddenServiceCharge').value = formatNumberWithCommas(serviceCharge);
+    document.getElementById('hiddenGrandTotal').value = formatNumberWithCommas(grandTotal);
+    document.getElementById('hiddenTotalNights').value = totalNights;
+
+    console.log("Sending EmailJS Template Params:", {
+      user_title: title,  // Fix: Sending the title
+        first_name: firstName,
+        last_name: lastName,
+        user_email: userEmail,
+        user_phone: userPhone,
+        checkin_date: checkinDate,
+        checkout_date: checkoutDate,
+        guest_number: guestNumber,
+        apartment_name: apartmentName,
+        subtotal: `₦${formatNumberWithCommas(subtotal)}`,
+        vat_amount: `₦${formatNumberWithCommas(vatAmount)}`,
+        service_charge: `₦${formatNumberWithCommas(serviceCharge)}`,
+        grand_total: `₦${formatNumberWithCommas(grandTotal)}`,
+        total_nights: totalNights
+    });
+
+    // ✅ Send the form using EmailJS (hidden inputs included)
+    emailjs.sendForm('service_p6y1fke', 'template_vvm744y', this)
+        .then(response => {
+            console.log('SUCCESS!', response.status, response.text);
+            window.location.href = 'confirmation.html';
+        })
+        .catch(error => {
+            console.log('FAILED...', error);
+            alert('Failed to send booking request. Please try again.');
+        });
+});
+
 </script>
 
 <script>
