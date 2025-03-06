@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prestine Apartments</title>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-59GPZ9JP');</script>
+  <!-- End Google Tag Manager -->
+  
+
+
     <script>
       !function(f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -925,7 +935,7 @@ justify-content: center;
             font-size: 18px; /* Font size */
             font-weight: bold; /* Bold text */
             text-decoration: none; /* Remove underline */
-            z-index: 9999; /* Ensure it appears above all other content */
+
             display: none; /* Initially hidden */
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for a floating effect */
             border: none;
@@ -1005,6 +1015,11 @@ justify-content: center;
 
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59GPZ9JP"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
     <div class="parent-contaiin">
 
       <header class="header container-fluid py-3">
@@ -1214,7 +1229,7 @@ justify-content: center;
                    
                     
                     <div class="centered-div">
-                        <button type="button" class="btn book-now-btn bg-primary" id="read-more-btn" data-apartment="Elegant-apartment" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: white;">Book Now
+                        <button type="button" class="btn book-now-btn bg-primary" id="read-more-btn" data-apartment="Elegant 1- room Apartment" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: white;">Book Now
                         </button>
                     </div>
                     
@@ -1244,32 +1259,33 @@ justify-content: center;
                 <div class="modal-body">
                   <form id="reservationForm">
                     <div class="mb-3">
-                     
+                      <!-- Title on the first line -->
+                      <label for="title" class="form-label">Title</label>
+                      <select class="form-select mb-2" id="title" name="user_title" required>
+                          <option value="" disabled selected>Select Title</option>
+                          <option value="Mr">Mr</option>
+                          <option value="Mrs">Mrs</option>
+                          <option value="Ms">Ms</option>
+                          <option value="Dr">Dr</option>
+                          <option value="Other">Other</option>
+                      </select>
+                  </div>
+                  
+                  <div class="mb-3">
                       <div class="row">
-                        <div class="col-auto">
-                          <label for="name" class="form-label">Title</label>
-                          <select class="form-select mb-2" id="title" name="user_title" required>
-
-                            <option value="" disabled selected>Select Title</option>
-                            <option value="Mr">Mr</option>
-                            <option value="Mrs">Mrs</option>
-                            <option value="Ms">Ms</option>
-                            <option value="Dr">Dr</option>
-                            <option value="Other">Other</option>
-                          </select>
-                        </div>
-
-                        <div class="col">
-                          <label for="first_name" class="form-label">First Name</label>
-                          <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" required>
+                          <!-- First Name on the second line -->
+                          <div class="col">
+                              <label for="first_name" class="form-label">First Name</label>
+                              <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" required>
+                          </div>
+                          <!-- Last Name on the second line -->
+                          <div class="col">
+                              <label for="last_name" class="form-label">Last Name</label>
+                              <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" required>
+                          </div>
                       </div>
-                      <div class="col">
-                          <label for="last_name" class="form-label">Last Name</label>
-                          <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" required>
-                      </div>
-                      
-                      </div>
-                    </div>
+                  </div>
+                  
                     <div class="mb-3">
                       <label for="email" class="form-label">Email Address</label>
                       <input type="email" class="form-control" id="email" name="user_email" placeholder="Enter your email" required>
@@ -1396,7 +1412,7 @@ justify-content: center;
      
       
       <div class="centered-div">
-          <button type="button" class="btn book-now-btn bg-white" id="read-more-btn"  data-apartment="Elegant-apartment" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: rgb(0, 0, 0);">Book Now
+          <button type="button" class="btn book-now-btn bg-white" id="read-more-btn"  data-apartment="Elegant 1- room Apartment" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: rgb(0, 0, 0);">Book Now
           </button>
       </div>
       
@@ -1656,7 +1672,7 @@ justify-content: center;
       </div>
     </footer>
 
-   <button type="button" class="btn-book book-now-btn" id="read-more-btn" data-bs-toggle="modal" data-apartment="Elegant-apartment" data-bs-target="#reservationModal" style="color: white;">Book Now
+   <button type="button" class="btn-book book-now-btn" id="read-more-btn" data-bs-toggle="modal" data-apartment="Elegant 1- room Apartment" data-bs-target="#reservationModal" style="color: white;">Book Now
      <p style="font-size: 15px;">₦75,000 per night</p>
    </button>
 
