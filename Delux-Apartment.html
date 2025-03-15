@@ -907,12 +907,16 @@ justify-content: center;
         .desktop-price{
           margin-top: 0;
         }
+        .features-mobile .btn a{
+          color: white;
+          text-decoration: none;
+        }
         .features-mobile .btn{
             
             width: 85%;
             height: 3em;
             text-align: center;
-            margin-top: 2.4em;
+            margin-top: 4.4em;
             font-size: 19px;
 
            
@@ -1198,7 +1202,7 @@ justify-content: center;
                   
                     
                     <div class="centered-div">
-                        <button type="button" class="btn book-now-btn bg-primary" id="read-more-btn" data-apartment="Deluxe 3-bedroom-Apartment " data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: white;">Book Now
+                        <button type="button" class="btn book-now-btn bg-primary" id="read-more-btn"  style="color: white;"><a href="delux-policy.html">Book Now</a>
                         </button>
                     </div>
                     
@@ -1402,9 +1406,9 @@ justify-content: center;
       
       
       <div class="centered-div">
-          <button type="button" class="btn book-now-btn bg-white" id="read-more-btn"  data-apartment="Deluxe 3-Bedroom-Apartment " data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: rgb(0, 0, 0);">Book Now
-          </button>
-      </div>
+        <button type="button" class="btn book-now-btn bg-primary" id="read-more-btn"  style="color: white;"><a href="delux-policy.html">Book Now</a>
+        </button>
+    </div>
       
           
   </div>
@@ -1734,117 +1738,7 @@ navItems.forEach((item) => {
 <!-- Include EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-<script>
-  // Initialize EmailJS
-emailjs.init('2ZNOdi6QPItTHItBO');
 
-// Function to format numbers with commas
-function formatNumberWithCommas(amount) {
-    return amount.toLocaleString(undefined, { minimumFractionDigits: 2 });
-}
-
-// Function to update price based on check-in and check-out dates
-function updatePrice() {
-    const checkinDate = document.getElementById('checkin').value;
-    const checkoutDate = document.getElementById('checkout').value;
-    const roomRate = parseFloat(document.getElementById('hiddenRoomRate').value) || 125000;
-
-    if (!checkinDate || !checkoutDate) {
-        document.getElementById('priceDisplay').textContent = "₦0.00";
-        return;
-    }
-
-    const checkin = new Date(checkinDate);
-    const checkout = new Date(checkoutDate);
-    const totalNights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
-
-    if (isNaN(totalNights) || totalNights <= 0) {
-        document.getElementById('priceDisplay').textContent = "₦0.00";
-        return;
-    }
-
-    const subtotal = totalNights * roomRate;
-    document.getElementById('priceDisplay').textContent = `₦${formatNumberWithCommas(subtotal)}`;
-}
-
-// Event listeners for date inputs
-document.getElementById('checkin').addEventListener('change', updatePrice);
-document.getElementById('checkout').addEventListener('change', updatePrice);
-
-// Handle "Book Now" button click
-document.querySelectorAll('.book-now-btn').forEach(button => {
-    button.addEventListener('click', function () {
-        document.getElementById('apartmentName').value = this.getAttribute('data-apartment');
-        document.getElementById('hiddenRoomRate').value = this.getAttribute('data-price') || 125000;
-    });
-});
-
-// Handle form submission
-document.getElementById('reservationForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const checkinDate = document.getElementById('checkin').value;
-    const checkoutDate = document.getElementById('checkout').value;
-    const guestNumber = document.getElementById('guests').value;
-    const totalNights = Math.max(1, parseInt((new Date(checkoutDate) - new Date(checkinDate)) / (1000 * 60 * 60 * 24)));
-
-    if (!checkinDate || !checkoutDate || totalNights <= 0) {
-        alert('Invalid check-in or check-out dates.');
-        return;
-    }
-
-    // Extract form values
-    const title = document.getElementById("title").value;  // Fix: Now extracting the title
-    const firstName = document.getElementById("first_name").value.trim();
-    const lastName = document.getElementById("last_name").value.trim();
-    const userEmail = document.getElementById("email").value;
-    const userPhone = document.getElementById("phone").value;
-    const apartmentName = document.getElementById("apartmentName").value;
-
-    // Calculate pricing
-    const displayedSubtotal = document.getElementById('priceDisplay').textContent.replace(/₦|,/g, '').trim();
-    const subtotal = parseFloat(displayedSubtotal) || 0;
-    const vatAmount = subtotal * 0.075;
-    const serviceCharge = subtotal * 0.1;
-    const grandTotal = subtotal + vatAmount + serviceCharge;
-
-    // ✅ Update hidden form fields before sending (formatted with commas)
-    document.getElementById('hiddensubtotal').value = formatNumberWithCommas(subtotal);
-    document.getElementById('hiddenVAT').value = formatNumberWithCommas(vatAmount);
-    document.getElementById('hiddenServiceCharge').value = formatNumberWithCommas(serviceCharge);
-    document.getElementById('hiddenGrandTotal').value = formatNumberWithCommas(grandTotal);
-    document.getElementById('hiddenTotalNights').value = totalNights;
-
-    console.log("Sending EmailJS Template Params:", {
-      user_title: title,  // Fix: Sending the title
-        first_name: firstName,
-        last_name: lastName,
-        user_email: userEmail,
-        user_phone: userPhone,
-        checkin_date: checkinDate,
-        checkout_date: checkoutDate,
-        guest_number: guestNumber,
-        apartment_name: apartmentName,
-        subtotal: `₦${formatNumberWithCommas(subtotal)}`,
-        vat_amount: `₦${formatNumberWithCommas(vatAmount)}`,
-        service_charge: `₦${formatNumberWithCommas(serviceCharge)}`,
-        grand_total: `₦${formatNumberWithCommas(grandTotal)}`,
-        total_nights: totalNights
-    });
-
-    // ✅ Send the form using EmailJS (hidden inputs included)
-    emailjs.sendForm('service_p6y1fke', 'template_vvm744y', this)
-        .then(response => {
-            console.log('SUCCESS!', response.status, response.text);
-            window.location.href = 'confirmation.html';
-        })
-        .catch(error => {
-            console.log('FAILED...', error);
-            alert('Failed to send booking request. Please try again.');
-        });
-});
-
-</script>
 
 
 

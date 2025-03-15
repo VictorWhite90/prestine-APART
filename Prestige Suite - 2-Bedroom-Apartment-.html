@@ -911,6 +911,11 @@ justify-content: center;
         .features-mobile ul{
             font-size: 13px;
         }
+        .features-mobile .btn a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
         .features-mobile .btn{
             
             width: 85%;
@@ -960,7 +965,10 @@ justify-content: center;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for a floating effect */
             border: none;
         }
-
+        .btn-book a{
+            text-decoration: none;
+            color: white;
+        }
         /* Show the button only on mobile screens */
         @media (max-width: 768px) {
             .btn-book {
@@ -1226,7 +1234,7 @@ justify-content: center;
     
                 
                 <div class="centered-div">
-                    <button type="button" class="btn book-now-btn bg-primary" id="read-more-btn" data-apartment="Modern 1-room-Apartment-Lugbe" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: white;">Book Now
+                    <button type="button" class="btn book-now-btn bg-primary" id="read-more-btn" style="color: white;"><a href="Prestige-policies.html">Book Now</a>
                     </button>
                 </div>
                 
@@ -1414,9 +1422,9 @@ justify-content: center;
       
 
       <div class="centered-div">
-          <button type="button" class="btn book-now-btn bg-white" id="read-more-btn"  data-apartment="Prestige-Suite-2-Bedroom-Apartment" data-bs-toggle="modal" data-bs-target="#reservationModal" style="color: rgb(0, 0, 0);">Book Now
-          </button>
-      </div>
+        <button type="button" class="btn book-now-btn bg-primary" id="read-more-btn" style="color: white;"><a href="Prestige-policies.html">Book Now</a>
+        </button>
+    </div>
       
           
   </div>
@@ -1679,8 +1687,8 @@ justify-content: center;
 
     
 
-   <button type="button" class="btn-book book-now-btn" id="read-more-btn" data-bs-toggle="modal" data-apartment="Prestige-Suite-2-Bedroom-Apartment" data-bs-target="#reservationModal" style="color: white;">Book Now
-    <p style="font-size: 15px;">₦78,000 per night</p>
+   <button type="button" class="btn-book book-now-btn" id="read-more-btn" style="color: white;"><a href="Prestige-policies.html">Book Now
+    <p style="font-size: 15px;">₦78,000 per night</p></a>
    </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1859,7 +1867,7 @@ document.getElementById('reservationForm').addEventListener('submit', function (
 
 </script> -->
 
-<script>
+<!-- <script>
   // Initialize EmailJS
 emailjs.init('2ZNOdi6QPItTHItBO');
 
@@ -1969,7 +1977,7 @@ document.getElementById('reservationForm').addEventListener('submit', function (
         });
 });
 
-</script>
+</script> -->
 
 <script>
   // Get the dropdown and name input elements
