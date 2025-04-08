@@ -1314,18 +1314,54 @@ justify-content: center;
                     <input type="hidden" id="hiddenTotalNights" name="total_nights">
                     
                     <p>Total Price (Excluding VAT): <span id="priceDisplay">₦0.00</span></p>
-        
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" id="policyAgree" required>
+                      <label class="form-check-label">
+                        I agree to the 
+                        <span class="policy-link" onclick="openPolicy(event)">Booking & Cancellation Policy</span>
+                      </label>
+                    </div>
+                  
+
 
                     <button type="submit" class="btn btn-primary w-100">Submit Reservation</button>
                   </form>
                 </div>
               </div>
             </div>
+          
+       
           </div>
           
+     
 
+    
+                    <!-- Policy Drawer (Initially Hidden) -->
+            <div id="policyDrawer" class="policy-drawer">
+              <span class="close-btn" onclick="closePolicy()">×</span>
+              <h4>Booking Policies</h4>
 
+          <p>Welcome to Pristine Apartments. To ensure a comfortable and secure stay for all our guests, please take a moment to read through our policies before proceeding with your booking.</p>
+                <ul>
+                  <li>1. Check-out time is 12 noon prompt. Extension will attract the appropriate night rate.</li>
+                  <li>2. Booking is confirmed only when payment has been received by the Management and a Booking Confirmation Advice is sent.</li>
+                  <li>3. Refund of payment is made if booking is cancelled within 48 hours to check-in date.</li>
+                  <li>4. A valid means of identification is required to be presented on arrival for checking in.</li>
+                  <li>5. The apartment is provided with cooking and laundry appliances. Any special requests concerning laundry and cooking should be made in advance.</li>
+                  <li>6.  Smoking is not allowed in the apartment or in any part of the facility.</li>
+                  <li>7. The occupant will not do anything that will create inconvenience to other apartment users.</li>
+                  <li>8. The occupant will not use the apartment for any illicit or illegal activities or any activity of a criminal nature. The Management of the apartment facility is under obligation to report any activity of a suspicious criminal nature to the security agencies.
+                  </li>
+                  <li>9. The facilities and appliances provided in the apartment are for use solely within the apartment. 
+                  </li>
+                  <li>10. The facilities and appliances in the apartment are for the convenience and comfort of the occupant and are to be used responsibly and without damages to avoid a surcharge.
+  
+                  </li>
+              </ul>
+        </div>
 
+<!-- Overlay (Initially Hidden) -->
+<div id="policyOverlay" class="policy-overlay" onclick="closePolicy()"></div>
            <!-- Placeholder for Notification -->
            <div id="notificationArea" class="fixed top-0 left-0 right-0 text-center text-lg font-semibold hidden"></div>
 

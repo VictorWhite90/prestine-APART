@@ -108,3 +108,86 @@
 <script></script>
 </body>
 </html>
+<script>
+    // Handle form submission
+document.getElementById('reservationForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const checkinDate = document.getElementById('checkin').value;
+    const checkoutDate = document.getElementById('checkout').value;
+    const guestNumber = document.getElementById('guests').value;
+    const totalNights = Math.max(1, parseInt((new Date(checkoutDate) - new Date(checkinDate)) / (1000 * 60 * 60 * 24)));
+
+    if (!checkinDate || !checkoutDate || totalNights <= 0) {
+        alert('Invalid check-in or check-out dates.');
+        return;
+    }
+
+    // Extract form values
+    const title = document.getElementById("title").value;
+    const firstName = document.getElementById("first_name").value.trim();
+    const lastName = document.getElementById("last_name").value.trim();
+    const userEmail = document.getElementById("email").value;
+    const userPhone = document.getElementById("phone").value;
+    const apartmentName = document.getElementById("apartmentName").value;
+
+    // Calculate pricing
+    const displayedSubtotal = document.getElementById('priceDisplay').textContent.replace(/₦|,/g, '').trim();
+    const subtotal = parseFloat(displayedSubtotal) || 0;
+    const vatAmount = subtotal * 0.075;
+    const serviceCharge = subtotal * 0.1;
+    const grandTotal = subtotal + vatAmount + serviceCharge;
+
+    // ✅ Update hidden form fields before sending (formatted with commas)
+    document.getElementById('hiddensubtotal').value = formatNumberWithCommas(subtotal);
+    document.getElementById('hiddenVAT').value = formatNumberWithCommas(vatAmount);
+    document.getElementById('hiddenServiceCharge').value = formatNumberWithCommas(serviceCharge);
+    document.getElementById('hiddenGrandTotal').value = formatNumberWithCommas(grandTotal);
+    document.getElementById('hiddenTotalNights').value = totalNights;
+
+    // Store booking details in localStorage for the confirmation page
+
+    localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
+
+    const bookingDetails = {
+    title: title,
+    firstName: firstName,
+    lastName: lastName,
+    userEmail: userEmail,
+    checkinDate: checkinDate,
+    checkoutDate: checkoutDate,
+    serviceCharge: `₦${formatNumberWithCommas(serviceCharge)}`,
+    vatAmount: `₦${formatNumberWithCommas(vatAmount)}`,
+    grandTotal: `₦${formatNumberWithCommas(grandTotal)}`
+};
+
+
+    console.log("Sending EmailJS Template Params:", {
+        user_title: title,
+        first_name: firstName,
+        last_name: lastName,
+        user_email: userEmail,
+        user_phone: userPhone,
+        checkin_date: checkinDate,
+        checkout_date: checkoutDate,
+        guest_number: guestNumber,
+        apartment_name: apartmentName,
+        subtotal: ₦${formatNumberWithCommas(subtotal)},
+        vat_amount: ₦${formatNumberWithCommas(vatAmount)},
+        service_charge: ₦${formatNumberWithCommas(serviceCharge)},
+        grand_total: ₦${formatNumberWithCommas(grandTotal)},
+        total_nights: totalNights
+    });
+
+    // ✅ Send the form using EmailJS (hidden inputs included)
+    emailjs.sendForm('service_p6y1fke', 'template_vvm744y', this)
+        .then(response => {
+            console.log('SUCCESS!', response.status, response.text);
+            window.location.href = 'confirmation.html';
+        })
+        .catch(error => {
+            console.log('FAILED...', error);
+            alert('Failed to send booking request. Please try again.');
+        });
+});
+</script>

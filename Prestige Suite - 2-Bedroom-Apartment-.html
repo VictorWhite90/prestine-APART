@@ -1416,12 +1416,12 @@ justify-content: center;
                 <ul>
                   <li>1. Check-out time is 12 noon prompt. Extension will attract the appropriate night rate.</li>
                   <li>2. Booking is confirmed only when payment has been received by the Management and a Booking Confirmation Advice is sent.</li>
-                  <li>3. Refund of payment is made only if booking is cancelled within 48 hours to check-in date.</li>
+                  <li>3. Refund of payment is made if booking is cancelled within 48 hours to check-in date.</li>
                   <li>4. A valid means of identification is required to be presented on arrival for checking in.</li>
-                  <li>5. The apartment is provided with cooking and laundry appliances. Any other special requests concerning laundry and cooking should be made in advance.</li>
+                  <li>5. The apartment is provided with cooking and laundry appliances. Any special requests concerning laundry and cooking should be made in advance.</li>
                   <li>6.  Smoking is not allowed in the apartment or in any part of the facility.</li>
                   <li>7. The occupant will not do anything that will create inconvenience to other apartment users.</li>
-                  <li>8. TThe occupant will not use the apartment for any illicit or illegal activities or any activity of a criminal nature. The Management of the apartment facility is under obligation to report any activity of a suspicious criminal nature to the security agencies.
+                  <li>8. The occupant will not use the apartment for any illicit or illegal activities or any activity of a criminal nature. The Management of the apartment facility is under obligation to report any activity of a suspicious criminal nature to the security agencies.
                   </li>
                   <li>9. The facilities and appliances provided in the apartment are for use solely within the apartment. 
                   </li>
@@ -1843,129 +1843,6 @@ navItems.forEach((item) => {
   console.log(emailjs);
 </script>
 
-<!-- <script>
-  // Initialize EmailJS
-emailjs.init('2ZNOdi6QPItTHItBO');
-
-// Function to format numbers with commas (e.g., 100000 -> 100,000.00)
-function formatNumberWithCommas(amount) {
-    return amount.toLocaleString(undefined, { minimumFractionDigits: 2 });
-}
-
-function updatePrice() {
-    const checkinDate = document.getElementById('checkin').value;
-    const checkoutDate = document.getElementById('checkout').value;
-    const roomRate = parseFloat(document.getElementById('hiddenRoomRate').value) || 78000;
-
-    if (!checkinDate || !checkoutDate) {
-        document.getElementById('priceDisplay').textContent = "₦0.00";
-        document.getElementById('hiddensubtotal').value = "";
-        document.getElementById('hiddenTotalNights').value = "";
-        return;
-    }
-
-    const checkin = new Date(checkinDate);
-    const checkout = new Date(checkoutDate);
-    const totalNights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
-
-    if (isNaN(totalNights) || totalNights <= 0) {
-        document.getElementById('priceDisplay').textContent = "₦0.00";
-        document.getElementById('hiddenTotalNights').value = "";
-        document.getElementById('hiddensubtotal').value = "";
-        return;
-    }
-
-    const subtotal = totalNights * roomRate;
-
-    document.getElementById('priceDisplay').textContent = `₦${formatNumberWithCommas(subtotal)}`;
-    document.getElementById('hiddenTotalNights').value = totalNights;
-    document.getElementById('hiddensubtotal').value = subtotal.toFixed(2);
-}
-
-// Event listeners for date inputs
-document.getElementById('checkin').addEventListener('change', updatePrice);
-document.getElementById('checkout').addEventListener('change', updatePrice);
-
-// Handle "Book Now" button click to set apartment details and room rate
-document.querySelectorAll('.book-now-btn').forEach(button => {
-    button.addEventListener('click', function () {
-        const apartmentName = this.getAttribute('data-apartment');
-        const roomRate = parseFloat(this.getAttribute('data-price')) || 78000;
-
-        document.getElementById('apartmentName').value = apartmentName;
-        document.getElementById('hiddenRoomRate').value = roomRate;
-    });
-});
-
-// Handle form submission
-document.getElementById('reservationForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const checkinDate = document.getElementById('checkin').value;
-    const checkoutDate = document.getElementById('checkout').value;
-    const guestNumber = document.getElementById('guests').value;
-    const roomRate = parseFloat(document.getElementById('hiddenRoomRate').value) || 78000;
-    const totalNights = parseInt(document.getElementById('hiddenTotalNights').value) || 1;
-
-    if (!checkinDate || !checkoutDate || totalNights <= 0) {
-        alert('Invalid check-in or check-out dates.');
-        return;
-    }
-
-    // Extract surname (last word in the name)
-    const fullName = document.getElementById("name").value.trim();
-    const nameParts = fullName.split(" ");
-    const surname = nameParts.length > 1 ? nameParts[nameParts.length - 1] : fullName;
-
-    // Extract the displayed subtotal from priceDisplay (remove ₦ sign and commas)
-    const displayedSubtotal = document.getElementById('priceDisplay').textContent.replace(/₦|,/g, '').trim();
-    const subtotal = parseFloat(displayedSubtotal) || 0;
-
-    // Calculate VAT, service charge, and grand total
-    const vatAmount = subtotal * 0.075;
-    const serviceCharge = subtotal * 0.1;
-    const grandTotal = subtotal + vatAmount + serviceCharge;
-
-    // Update hidden input fields before sending
-    document.getElementById('hiddensubtotal').value = formatNumberWithCommas(subtotal);
-    document.getElementById('hiddenVAT').value = formatNumberWithCommas(vatAmount);
-    document.getElementById('hiddenServiceCharge').value = formatNumberWithCommas(serviceCharge);
-    document.getElementById('hiddenGrandTotal').value = formatNumberWithCommas(grandTotal);
-
-    console.log("Updated Subtotal Before Sending:", formatNumberWithCommas(subtotal));
-
-    // Prepare data for EmailJS
-    const templateParams = {
-        surname: surname, // Send only the surname
-        user_name: fullName,
-        user_email: document.getElementById("email").value,
-        user_phone: document.getElementById("phone").value,
-        checkin_date: checkinDate,
-        checkout_date: checkoutDate,
-        guest_number: guestNumber,
-        apartment_name: document.getElementById("apartmentName").value,
-        subtotal: `₦${formatNumberWithCommas(subtotal)}`,
-        vat_amount: `₦${formatNumberWithCommas(vatAmount)}`,
-        service_charge: `₦${formatNumberWithCommas(serviceCharge)}`,
-        grand_total: `₦${formatNumberWithCommas(grandTotal)}`,
-        total_nights: totalNights.toFixed(2)
-    };
-
-    console.log("Final Template Params:", templateParams);
-
-    // Send the form using EmailJS
-    emailjs.sendForm('service_p6y1fke', 'template_vvm744y', this)
-        .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-            window.location.href = 'confirmation.html';
-        }, function (error) {
-            console.log('FAILED...', error);
-            alert('Failed to send booking request. Please try again.');
-        });
-});
-
-</script> -->
-
 <script>
   // Initialize EmailJS
 emailjs.init('2ZNOdi6QPItTHItBO');
@@ -2047,6 +1924,22 @@ document.getElementById('reservationForm').addEventListener('submit', function (
     document.getElementById('hiddenGrandTotal').value = formatNumberWithCommas(grandTotal);
     document.getElementById('hiddenTotalNights').value = totalNights;
 
+     // Store booking details in localStorage for the confirmation page
+     const bookingDetails = {
+    title: title,
+    firstName: firstName,
+    lastName: lastName,
+    userEmail: userEmail,
+    checkinDate: checkinDate,
+    checkoutDate: checkoutDate,
+    serviceCharge: `₦${formatNumberWithCommas(serviceCharge)}`,
+    vatAmount: `₦${formatNumberWithCommas(vatAmount)}`,
+    grandTotal: `₦${formatNumberWithCommas(grandTotal)}`
+};
+
+    localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
+
+
     console.log("Sending EmailJS Template Params:", {
       user_title: title,  // Fix: Sending the title
         first_name: firstName,
@@ -2077,6 +1970,8 @@ document.getElementById('reservationForm').addEventListener('submit', function (
 });
 
 </script>
+
+
 <script>
   // Function to open the policy drawer and overlay
 function openPolicy(event) {
