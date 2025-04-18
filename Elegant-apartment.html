@@ -1253,7 +1253,7 @@ justify-content: center;
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="reservationModalLabel">Hotel Reservation</h5>
+                  <h5 class="modal-title" id="reservationModalLabel">Apartment Reservation</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -1302,10 +1302,17 @@ justify-content: center;
                       <label for="checkout" class="form-label">Check-Out Date</label>
                       <input type="date" class="form-control" id="checkout" name="checkout_date" required>
                     </div>
+
                     <div class="mb-3">
                       <label for="guests" class="form-label">Number of Guests</label>
-                      <input type="number" class="form-control" id="guests" name="guest_number" placeholder="Enter number of guests" required>
+                      <select class="form-select" id="guests" name="guest_number" required>
+                        <option value="" disabled selected>Select number of guests</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        
+                      </select>
                     </div>
+
 
                    
                     <input type="hidden" id="hiddenRoomRate" name="room_rate">
@@ -1386,7 +1393,7 @@ justify-content: center;
 
                 <div class="description-tex-para " >
                     <div class="description-tex-para1">
-                      <h2 style="text-align: center;">Elegant 1- room Apartment - Apo  </h2>
+                      <h2 style="text-align: center;">Elegant 1- Bedroom Apartment - Apo  </h2>
                         This stylish apartment that is perfectly located in one of the most sought-after areas, just beside Novare Shoprite Apo, offering unparalleled convenience and access to top-tier shopping, dining, and entertainment. Ideal for individuals or couples seeking a comfortable, modern living space in a vibrant neighborhood, this apartment features:
                        <p> ●	Spacious Open-Plan Living Area: A bright and welcoming living room, designed to maximize comfort and functionality, perfect for relaxation or hosting guests.</p>
                        <p> ●	Fully Equipped Kitchen: Featuring modern appliances, sleek countertops, and ample storage, the kitchen is perfect for both everyday meals and entertaining.</p>
@@ -1574,7 +1581,7 @@ justify-content: center;
       <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner m-auto" style="height: 400px;">
               <div class="carousel-item active">
-                  <p class="review-text">"Amazing staff, superb food, outstanding services, and I felt at home. I could have stayed longer. I like the great services I got from the staff. I loved everything and felt at home. Food was superb as I did not expect such a great meal from a hotel. So, I will absolutely come back again."</p>
+                  <p class="review-text">"Amazing staff, superb food, outstanding services, and I felt at home. I could have stayed longer. I like the great services I got from the staff. I loved everything and felt at home. Food was superb as I did not expect such a great meal from a Apartment. So, I will absolutely come back again."</p>
                   <p class="review-author">-Jane Pattrick </p>
               </div>
               <div class="carousel-item">

@@ -171,6 +171,7 @@
         <p><strong>Email:</strong> <span id="email"></span></p>
         <p><strong>Check-in Date:</strong> <span id="checkinDate"></span></p>
         <p><strong>Check-out Date:</strong> <span id="checkoutDate"></span></p>
+        <p><strong>Subtotal:</strong> <span id="subtotal"></span></p>
         <p><strong>Service Charge:</strong> <span id="serviceCharge"></span></p>
         <p><strong>VAT:</strong> <span id="vatAmount"></span></p>
         <p><strong>Grand Total:</strong> <span id="grandTotal"></span></p>
@@ -191,6 +192,7 @@
             document.querySelector('#email').textContent = bookingDetails.userEmail;
             document.querySelector('#checkinDate').textContent = bookingDetails.checkinDate;
             document.querySelector('#checkoutDate').textContent = bookingDetails.checkoutDate;
+            document.querySelector('#subtotal').textContent = bookingDetails.subtotal;
             document.querySelector('#serviceCharge').textContent = bookingDetails.serviceCharge;
             document.querySelector('#vatAmount').textContent = bookingDetails.vatAmount;
             document.querySelector('#grandTotal').textContent = bookingDetails.grandTotal;
